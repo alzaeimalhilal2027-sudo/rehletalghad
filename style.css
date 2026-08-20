@@ -61,4 +61,3 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0b0b12; c
     .status-banner { flex-direction: column; align-items: flex-start; }
     .badge-soon { align-self: flex-end; margin-top: 5px; }
 }
-
