@@ -1,107 +1,256 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رحلة الغد عبر الزمن | الموقع الرسمي</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#063d27">
+  <title>رحلة إلى الغد | عبر الزمن</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- شريط التنقل العلوي -->
-    <header class="site-header">
-        <div class="brand-box">
-            <img src="logo.png" alt="شعار الموقع" class="esports-logo" onerror="this.style.display='none'">
-            <div class="brand-titles">
-                <span class="site-name">رحلة الغد عبر الزمن</span>
-                <span class="developer-tag">المطور: حاكم الدويش</span>
-            </div>
-        </div>
-        <nav class="main-nav">
-            <button data-target="home" class="nav-btn active">الرئيسية</button>
-            <button data-target="games" class="nav-btn">ألعاب</button>
-            <button data-target="apps" class="nav-btn">تطبيقات</button>
-            <button data-target="projects" class="nav-btn">المشاريع</button>
-            <button data-target="about" class="nav-btn">عن المطور</button>
-        </nav>
-    </header>
+<header class="header">
+  <div class="header-inner">
 
-    <main class="main-content">
-        
-        <!-- قسم الرئيسية -->
-        <section id="home" class="content-section active-section">
-            <div class="hero-badge">✨ الموقع الرسمي</div>
-            <h1 class="main-title">رحلة الغد عبر الزمن</h1>
-            <p class="section-desc">حيث يلتقي أصالة التراث وعراقة الماضي بروح الابتكار والتطوير الرقمي الحديث.</p>
-            <div class="info-box">
-                <h2>أهلاً بكم في منصتكم الرقمية الحصرية</h2>
-                <p>
-                    نرحب بكم زوارنا الكرام في الموقع الرسمي للمطور المستقل <strong>حاكم الدويش</strong>. نضع بين أيديكم عالماً فريداً يدمج بين الألعاب التفاعلية، التطبيقات البرمجية، والمشاريع الرقمية المبتكرة. لقد أُسست هذه المنصة لتقديم تجارب رقمية أصيلة ومبتكرة، مستلهمة من جذورنا وتاريخنا العريق برؤية تقنية حديثة ومستقبلية.
-                </p>
-            </div>
-        </section>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-        <!-- قسم ألعاب -->
-        <section id="games" class="content-section">
-            <h2 class="section-heading">ألعاب</h2>
-            <p class="section-desc">الألعاب الحصرية المصممة بعناية لتجربة ممتعة ومشوقة.</p>
-            <div class="status-banner">
-                <span class="banner-icon">🎮</span>
-                <div class="banner-text">
-                    <h3>ألعاب قيد الإنتاج والتطوير</h3>
-                    <p>نعمل حالياً على تطوير ألعاب تفاعلية وسباق فريدة من نوعها.</p>
-                </div>
-                <span class="badge-soon">قريباً</span>
-            </div>
-        </section>
+    <img id="siteLogo" class="logo" src="" alt="شعار الموقع">
 
-        <!-- قسم تطبيقات -->
-        <section id="apps" class="content-section">
-            <h2 class="section-heading">تطبيقات</h2>
-            <p class="section-desc">الحلول البرمجية والتطبيقات الذكية والخدمية.</p>
-            <div class="status-banner">
-                <span class="banner-icon">📱</span>
-                <div class="banner-text">
-                    <h3>تطبيقات وحلول رقمية متطورة</h3>
-                    <p>أدوات وحلول برمجية ذكية قيد الإعداد لتسهيل مهامك اليومية.</p>
-                </div>
-                <span class="badge-soon">قريباً</span>
-            </div>
-        </section>
+    <nav id="navMenu" class="nav">
+      <button onclick="showSection('home')">الرئيسية</button>
+      <button onclick="showSection('games')">الألعاب</button>
+      <button onclick="showSection('designs')">التصاميم</button>
+      <button onclick="showSection('drawings')">الرسومات</button>
+      <button onclick="showSection('apps')">التطبيقات</button>
+      <button onclick="showSection('projects')">المشاريع</button>
+      <button onclick="showSection('lenses')">عدسات سناب</button>
+      <button onclick="showSection('about')">عن المطور</button>
+      <button class="developer-link" onclick="openAdmin()">إدارة المطور</button>
+    </nav>
 
-        <!-- قسم المشاريع -->
-        <section id="projects" class="content-section">
-            <h2 class="section-heading">المشاريع</h2>
-            <p class="section-desc">المشاريع الكبرى للألعاب والتطبيقات قيد الإطلاق.</p>
-            <div class="status-banner">
-                <span class="banner-icon">🏛️</span>
-                <div class="banner-text">
-                    <h3>منصة رحلة المجد</h3>
-                    <p>مشروع تاريخي تفاعلي يوثق التراث والمستقبل برؤية برمجية متكاملة.</p>
-                </div>
-                <span class="badge-soon">قريباً</span>
-            </div>
-        </section>
+  </div>
+</header>
 
-        <!-- قسم عن المطور -->
-        <section id="about" class="content-section">
-            <h2 class="section-heading">عن المطور</h2>
-            <p class="section-desc">المطور المستقل: حاكم الدويش</p>
-            <div class="info-box">
-                <p>
-                    مرحباً بكم، أنا المطور <strong>حاكم الدويش</strong> من الرياض. أعمل بشكل مستقل على تصميم وتطوير الألعاب التفاعلية، التطبيقات الرقمية، والمحتوى التقني الإبداعي. أهدف من خلال منصة <strong>رحلة الغد عبر الزمن (rehletalghad.com)</strong> لتقديم تجارب رقمية مميزة تجمع أصالة التراث بروح الابتكار الحديث، لتكون وجهتكم الأولى لكل ما هو جديد وحصري في عالم التقنية.
-                </p>
-            </div>
-        </section>
 
-    </main>
+<main>
 
-    <!-- تذييل الموقع -->
-    <footer class="site-footer">
-        <p><strong>رحلة الغد عبر الزمن</strong> &copy; 2026 جميع الحقوق محفوظة للمطور حاكم الدويش ®</p>
-        <p class="domain-tag">الموقع الرسمي: <a href="https://rehletalghad.com">rehletalghad.com</a></p>
-    </footer>
+  <!-- الرئيسية -->
+  <section id="home" class="page active">
 
-    <script src="script.js"></script>
+    <div class="hero">
+      <span class="welcome">مرحباً بك في عالم المستقبل</span>
+
+      <h1 id="homeTitle">رحلة إلى الغد</h1>
+
+      <h2>عبر الزمن</h2>
+
+      <p id="homeDescription">
+        موقع يجمع الألعاب والتطبيقات والمشاريع والتصاميم
+        والرسومات وعدسات سناب في تجربة رقمية تجمع الإبداع
+        والتقنية والمستقبل.
+      </p>
+    </div>
+
+    <div class="cards home-cards">
+
+      <div class="card" onclick="showSection('games')">
+        <div class="icon">🎮</div>
+        <h3>الألعاب</h3>
+        <p>اكتشف الألعاب والمشاريع الترفيهية.</p>
+      </div>
+
+      <div class="card" onclick="showSection('designs')">
+        <div class="icon">🎨</div>
+        <h3>التصاميم</h3>
+        <p>مجموعة من التصاميم الإبداعية.</p>
+      </div>
+
+      <div class="card" onclick="showSection('drawings')">
+        <div class="icon">🖼️</div>
+        <h3>الرسومات</h3>
+        <p>رسومات وأعمال فنية.</p>
+      </div>
+
+      <div class="card" onclick="showSection('apps')">
+        <div class="icon">📱</div>
+        <h3>التطبيقات</h3>
+        <p>تطبيقات ومشاريع رقمية.</p>
+      </div>
+
+      <div class="card" onclick="showSection('projects')">
+        <div class="icon">🚀</div>
+        <h3>المشاريع</h3>
+        <p>مشاريع الموقع المستقبلية.</p>
+      </div>
+
+      <div class="card" onclick="showSection('lenses')">
+        <div class="icon">👻</div>
+        <h3>عدسات سناب</h3>
+        <p>عدسات وتجارب إبداعية لمنصة سناب.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- الأقسام -->
+  <section id="games" class="page">
+    <div class="section-head">
+      <span>🎮</span>
+      <h2>الألعاب</h2>
+      <p>الألعاب المضافة إلى الموقع.</p>
+    </div>
+    <div id="gamesList" class="items"></div>
+  </section>
+
+
+  <section id="designs" class="page">
+    <div class="section-head">
+      <span>🎨</span>
+      <h2>التصاميم</h2>
+      <p>تصاميم إبداعية من الموقع.</p>
+    </div>
+    <div id="designsList" class="items"></div>
+  </section>
+
+
+  <section id="drawings" class="page">
+    <div class="section-head">
+      <span>🖼️</span>
+      <h2>الرسومات</h2>
+      <p>مجموعة الرسومات والأعمال الفنية.</p>
+    </div>
+    <div id="drawingsList" class="items"></div>
+  </section>
+
+
+  <section id="apps" class="page">
+    <div class="section-head">
+      <span>📱</span>
+      <h2>التطبيقات</h2>
+      <p>التطبيقات والروابط المضافة.</p>
+    </div>
+    <div id="appsList" class="items"></div>
+  </section>
+
+
+  <section id="projects" class="page">
+    <div class="section-head">
+      <span>🚀</span>
+      <h2>المشاريع</h2>
+      <p>مشاريع الموقع وأعماله المستقبلية.</p>
+    </div>
+    <div id="projectsList" class="items"></div>
+  </section>
+
+
+  <section id="lenses" class="page">
+    <div class="section-head">
+      <span>👻</span>
+      <h2>عدسات سناب</h2>
+      <p>عدسات سناب الجديدة والمضافة من إدارة المطور.</p>
+    </div>
+    <div id="lensesList" class="items"></div>
+  </section>
+
+
+  <!-- عن المطور -->
+  <section id="about" class="page">
+    <div class="about-box">
+      <span>👤</span>
+      <h2 id="developerName">حاتم الحويش</h2>
+      <p id="developerBio">
+        مطور وصاحب مشروع رحلة إلى الغد: عبر الزمن.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- إدارة المطور -->
+  <section id="admin" class="page admin-page">
+
+    <div class="section-head">
+      <span>⚙️</span>
+      <h2>إدارة المطور</h2>
+      <p>هذه الصفحة خاصة بالمطور فقط.</p>
+    </div>
+
+    <div class="admin-box">
+
+      <h3>🏠 تعديل الصفحة الرئيسية</h3>
+
+      <input id="adminTitle" placeholder="عنوان الموقع">
+
+      <textarea id="adminDescription"
+        placeholder="وصف الصفحة الرئيسية"></textarea>
+
+      <input id="adminName" placeholder="اسم المطور">
+
+      <textarea id="adminBio"
+        placeholder="نبذة عن المطور"></textarea>
+
+      <label class="upload">
+        تغيير شعار الموقع
+        <input id="logoInput" type="file" accept="image/*">
+      </label>
+
+      <button class="save-btn" onclick="saveSiteSettings()">
+        حفظ إعدادات الموقع
+      </button>
+
+    </div>
+
+
+    <div class="admin-box">
+
+      <h3>➕ إضافة محتوى</h3>
+
+      <select id="itemCategory">
+        <option value="games">الألعاب</option>
+        <option value="designs">التصاميم</option>
+        <option value="drawings">الرسومات</option>
+        <option value="apps">التطبيقات</option>
+        <option value="projects">المشاريع</option>
+        <option value="lenses">عدسات سناب</option>
+      </select>
+
+      <input id="itemTitle" placeholder="اسم العنصر">
+
+      <textarea id="itemDescription"
+        placeholder="وصف العنصر"></textarea>
+
+      <input id="itemLink"
+        placeholder="رابط التحميل أو الرابط الخارجي">
+
+      <label class="upload">
+        صورة العنصر
+        <input id="itemImage" type="file" accept="image/*">
+      </label>
+
+      <button class="save-btn" onclick="addItem()">
+        إضافة إلى الموقع
+      </button>
+
+    </div>
+
+
+    <div class="admin-box">
+      <h3>🗑️ إدارة المحتوى</h3>
+      <div id="adminItems"></div>
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  © 2026 رحلة إلى الغد: عبر الزمن
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
